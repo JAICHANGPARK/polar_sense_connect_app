@@ -2,6 +2,9 @@
 
 A new Flutter project.
 
+- https://www.polar.com/en/products/accessories/polar-verity-sense
+- ![](https://www.polar.com/sites/default/files/product3/1500x1500/polar-verity-sense-sensor-and-armband-1500x1500.jpg)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
