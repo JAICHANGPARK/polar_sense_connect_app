@@ -133,29 +133,38 @@ class _MyHomePageState extends State<MyHomePage> {
                           });
                         },
                         child: Text("Check Scan Devices")),
-
-                    ElevatedButton(onPressed: (){
-                      if(_bluetoothDeviceMap.length > 0){
-                        _bluetoothDeviceMap.forEach((key, value) {
-                          value.connect();
-                        });
-                      }
-                    }, child: Text("연결하기")),
-
+                    ElevatedButton(
+                        onPressed: () {
+                          if (_bluetoothDeviceMap.length > 0) {
+                            _bluetoothDeviceMap.forEach((key, value) {
+                              value.connect();
+                            });
+                          }
+                        },
+                        child: Text("Connect Polar Verity Sense")),
                     ElevatedButton(
                         onPressed: () {
                           _bluetoothDeviceMap.forEach((key, value) {
-                           value.discoverServices().then((services) {
-                             services.forEach((element) {
-                               print(">> Service: ${element.uuid.toString()}");
-                               element.characteristics.forEach((chars) {
-                                 print(">> Chars: ${chars.uuid.toString()}");
-                               });
-                             });
-                           });
+                            value.discoverServices().then((services) {
+                              services.forEach((element) {
+                                print(">> Service: ${element.uuid.toString()}");
+                                element.characteristics.forEach((chars) {
+                                  print(">> Chars: ${chars.uuid.toString()}");
+                                });
+                              });
+                            });
                           });
                         },
                         child: Text("Discovery Services")),
+                    ElevatedButton(
+                        onPressed: () {
+                          if (_bluetoothDeviceMap.length > 0) {
+                            _bluetoothDeviceMap.forEach((key, value) {
+                              value.disconnect();
+                            });
+                          }
+                        },
+                        child: Text("Disconnect Polar Verity Sense")),
                   ],
                 );
               }
